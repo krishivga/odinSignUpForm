@@ -1,0 +1,239 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* This is where the actual document starts */
+/* Setting up variables */
+:root {
+    --main-bg: #001524;
+    --alt-bg: #8B939C;
+    --highlight: #EABDA8;
+    --alt-highlight: #A7ACB4;
+    --contrast: #756966;
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Also, fixing some stuff from the overrides */
+
+em {
+    font-style: italic; /* Default behavior, but might be overridden */
+  }
+
+/* Creating the basic outline of the document and organising it using flexbox */
+ body {
+    display: flex;
+ }
+
+.main-section {
+    background-color: var(--main-bg);
+    width: 65vw;
+    height: 100vh;
+}
+
+.banner-section {
+    background: url("assets/banner_bg.avif");
+    width: 35vw;
+    min-width: 500px;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Main section organisation */
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero-container {
+    width: 90%;
+    height: 25%;
+    background-color: var(--main-bg);
+}
+
+.form-master {
+    width: 100%; 
+    height: 70%;
+    padding-top: 30px;
+}
+
+.form-container {
+    width: 90%;
+    height: 70%;
+    background-color: var(--main-bg);
+}
+
+.submit-container {
+    width: 70%;
+    height: 30%;
+    padding: 15px;
+    background-color: var(--main-bg);
+}
+
+/* For hero-container */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-text {
+    font-size: 3rem;
+    color: var(--highlight)
+}
+
+.hero-cta {
+    font-size: 4rem;
+    color: var(--highlight);
+}
+/* Form master */
+.form-master {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid gray;
+}
+
+/* For form-container */
+.main-form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Imported set of styles */
+input[type=text], input[type=email], input[type=number], input[type=password] {
+    padding: 0;
+    width: 250px;
+    height: 30px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0, 0, 0, .15);
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.6rem;
+    border-radius: 3px;
+  }
+
+.form-input:valid {
+    border-color: greenyellow;
+}
+
+.form-input:invalid {
+    border-color: red;
+}
+
+.form-item {
+    width: 50%;
+    height: 25%;
+    background-color: var(--main-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.form-label {
+    width: 250px;
+    font-size: 2.5rem;
+    color: var(--alt-highlight);
+    text-align: left;
+}
+
+/* For submit-container */
+.submit-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* CSS */
+.submit-form {
+  background-color: var(--contrast);
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+}
+
+.submit-form:hover,
+.submit-form:focus {
+  opacity: .75;
+}
+
+.already-user {
+    color: var(--alt-highlight);
+    font-size: 1.6rem;
+}
+
